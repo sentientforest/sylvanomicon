@@ -1,4 +1,4 @@
-# Species you have planted on your sierra foothills property
+### Species you have planted on your sierra foothills property
 
 Big leaf maple
 rocky mountain maple
@@ -59,7 +59,7 @@ ginkgo
 american persimmon
 northern california black walnut
 
-# Species planted that died
+### Species planted that died
 
 Acer monspessalanum
 myrica californica
@@ -71,3 +71,7 @@ jujube
 shagbark hickory
 fantastic avocado
 most of the hops... one or two are barely alive as of 2020-08
+
+### File History
+
+(file ported from daybook 2020-08-16, removed street name)

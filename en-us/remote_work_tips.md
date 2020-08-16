@@ -1,3 +1,13 @@
+# Remote Work Tips
+
+I have been working remotely full time since 2014. Over the past six years,
+I only traveled into the Bay Area for work trips about 1-4 times per year.
+Other than that, I worked from my home office.
+
+On this page I have written up some of the lessons I have learned in that time.
+
+## Home Office Basics
+
 Have a dedicated office with a closed door.
 If you have a hollow-core door, replace it with a solid core
 door for better soundproofing. Ideally, situate your office in a separate
@@ -41,3 +51,14 @@ in a suburb, and greater distance between myself in my neighbors. Many times
 I have found myself on a conference call with colleagues I know to be in a
 windowless office in Redwood City or Los Gatos, while I look out the window and
 see a hawk fly by or a squirrel dropping cones from a Gray Pine.
+
+## Important Work Skills for Remote Employees
+
+### Written Communication
+
+Good writing skills are a remote-work superpower. This is especially critical when you
+cross time zones with colleagues. At my company, we have had offices in the UK
+for several years. This gives us 1-2 hours in the morning (Pacific Time)
+where we overlap. If you leave out important details in a written Jira comment,
+email, or Slack message, you can easily lose a day each time the recipient needs
+to ask for clarification. 
