@@ -9,6 +9,7 @@ in the vein of the Necronomicon or Cryptonomicon. "Sylvan" invokes woodlands
 or forests, in which I have a strong interest through studying ecology and forest gardening.
 Grimoires generally contain spells and incantations, which for
 our purposes in the current time manifests as high technology: Software, electronics, hardware, computers.
+Oh, and pretty sure I coined the term: When I first googled it, there were 0 results. 
 
 My goal with this work is to collect and document useful information that I have found
 or learned in my areas of interest. And who knows, maybe to eventually coalesce
