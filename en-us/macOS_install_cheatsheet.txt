@@ -1,0 +1,98 @@
+### macOS Install Cheatsheet
+
+Installing macOS is generally pretty straightforward. But there are definitely
+peculiarities when working with mac pros from 2010 and 2012, mostly due to the
+Metal support requirement for GPUs.
+
+##### Notes on Apple's convulated process for acquiring a High Sierra installer from a Mojave+ OS.
+
+Imagine a simple use case:
+* You buy a mid-2010 mac pro on eBay. You want to upgrade it to run Mojave.
+* You want to install your own hard drive, known to be new, rather than using a (potentially) older drive of unknown origin provided by the seller.
+* You want to leave the drive provided by the seller untouched, and remove it.
+* Essentially, you want to install High Sierra, then Mojave, to a new blank drive on the new machine.
+* You'll need to: acquire the High Sierra installer, upgrade to latest, then do the Mojave upgrade process.
+* Your other machines are running Mojave.
+
+Finding the High Sierra installer is more complicated than it should be.
+
+* Find the web url that links to the correct installer on the App Store. As of 2020-08-25, this is:
+[https://itunes.apple.com/us/app/macos-high-sierra/id1246284741?ls=1&mt=12](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741?ls=1&mt=12)
+* Click the link in a web browser.
+* This opens the App Store to the High Sierra page. Click "Get".
+* This opens System Preferences. This is obviously confusing, as you just want to download a file, not update your own OS.
+* A prompt will warn, "Are you sure you want to download High Sierra?" or something. Click "Yes".
+* The file will download for a while.
+* When it completes, it will try to open, warn you that High Sierra can't be installed on your Mojave computer, and close.
+* You now have a copy of High Sierra in /Applications. And it only took you three separate applications to get here.
+
+Note, you can't just search "high sierra" in the app store either. Presumably this is becasue non-technical users might get confused?
+
+Now, why did I have to go through the above? I have certainly worked with High Sierra before.
+I backed up my installer, and I made a High Sierra install USB several years ago.
+But when I went to use it again in 2020, specifically to get a mac pro upgraded to Mojave as the end result,
+I was prompted with a warning that my installer was "damaged".
+
+This appears to be due to an expired certificate.
+
+[https://osxdaily.com/2019/10/24/fix-install-macos-application-damaged-cant-be-used-error-mac/](https://osxdaily.com/2019/10/24/fix-install-macos-application-damaged-cant-be-used-error-mac/)
+Retrieved 2020-08-25
+> The cause of this error is an expired certificate, and because the certificate is expired the “Install macOS” app for Mojave, Sierra, and High Sierra will not run. Fortunately, there is a fairly simple solution to the “damaged” installer problem.
+
+The "easy" solution is to re-download. Which only involves the 8-step, 3-application process I noted above.
+
+There is also noted in the above article a way to possibly manually patch an
+installer, detailing the process for a Mojave installer. The below was quoted
+in the article from a user comment:
+
+> You can also fix the This copy of the Install macOS Mojave.app application is damaged, and can’t be used to install macOS. message like this:
+>
+> Step 1. Go to your Applications folder.
+>
+> Step 2. Find the Installer for macOS Mojave in Applications folder
+>
+> Step 3. Right click on the installer and click “Show Package Contents”.
+>
+> Step 4. Click on folder named “Contents”.
+>
+> Step 5. Click on the folder named “SharedSupport”.
+>
+> Step 6. Delete the file named “InstallInfo.plist”.
+>
+> Step 7. Enter your administer password to confirm.
+>
+> Step 8. Now open the installer for MacOS Mojave again, it will run
+>
+> If that fails, delete the installer and re-dowload it from Apple
+
+
+##### Links
+
+Create install media
+[https://support.apple.com/en-us/HT201372](https://support.apple.com/en-us/HT201372)
+Retrieved 2020-08-25
+
+    Catalina:*
+    sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+
+    Mojave:*
+    sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+
+    High Sierra:*
+    sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+
+    El Capitan:
+    sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app
+
+How to upgrade to Mojave:
+[https://support.apple.com/en-us/HT210190](https://support.apple.com/en-us/HT210190)
+
+Upgrading to Mojave, specific to mid-2010 and 2012 mac pros:
+[https://support.apple.com/en-us/HT208898](https://support.apple.com/en-us/HT208898)
+
+
+[https://blog.macsales.com/46029-make-your-mac-pro-tower-mojave-compatible-with-a-gpu-upgrade/](https://blog.macsales.com/46029-make-your-mac-pro-tower-mojave-compatible-with-a-gpu-upgrade/)
+Retrieved 2020-08-25
+> Notes:
+> 1. According to Apple, you need to update to macOS High Sierra 10.13.6, make sure that your graphics card is compatible, and then turn off FileVault before you upgrade to Mojave on the 2010 and 2012 Mac Pro models.
+> 2. With this Metal-compatible graphics card installed, you will not be able to see the Apple logo at boot, nor can you access boot options. Once your system has fully booted, the graphics card will function normally.
